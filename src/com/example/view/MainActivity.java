@@ -35,15 +35,26 @@ public class MainActivity extends Activity {
         mParams = new WindowManager.LayoutParams();
         mParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;// 系统提示window
         mParams.format = PixelFormat.TRANSLUCENT;// 支持透明
+       
+        mParams.width = WindowManager.LayoutParams.MATCH_PARENT;//窗口的宽和高
+        mParams.height = 150;
         mParams.gravity = Gravity.BOTTOM;
+        
         //mParams.format = PixelFormat.RGBA_8888;
         mParams.flags |= WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;// 焦点
-        mParams.width = 490;//窗口的宽和高
-        mParams.height = 160;
-        mParams.x = 0;//窗口位置的偏移量
-        mParams.y = 0;
+       
+//        mParams.x = 0;//窗口位置的偏移量
+//        mParams.y = 30;
         
         v = LayoutInflater.from(this).inflate(R.layout.tab, null);
+//        v.post(new Runnable() {
+//			
+//			@Override
+//			public void run() {
+//				
+//			}
+//		});
+        
         wManager.addView(v, mParams);
 	}
 
